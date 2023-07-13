@@ -12,18 +12,13 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $usertype=Auth()->user()->usertype;
+        $usertype = Auth()->user()->usertype;
 
-        if($usertype=='user')
-        {
+        if ($usertype == 'user') {
             return view('pages.index');
-        }
-        else if($usertype=='admin')
-        {
+        } else if ($usertype == 'admin') {
             return view('admin.index');
-        }
-        else
-        {
+        } else {
             return redirect()->back();
         }
     }
